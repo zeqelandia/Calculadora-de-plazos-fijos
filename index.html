@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="monto" placeholder="Monto">
+    <input type="text" id="ganancia" placeholder="Ganancia mensual en %">
+    <input type="button" value="Calcular" onclick="calcular();">
+</body>
+<script>
+    function calcular(){
+        var monto = parseInt(document.getElementById("monto").value);
+        var ganancia = parseInt(document.getElementById("ganancia").value);
+
+        for(let i = 1;i<=10;i++){
+            for(let j = 1;j<=12;j++){
+                monto += ganancia * monto / 100;
+                console.log("MES: " + j + " MONTO: " + parseInt(monto));
+            }
+        }
+    }
+</script>
+</html>
